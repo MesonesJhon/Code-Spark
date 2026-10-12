@@ -116,6 +116,10 @@ Las pruebas de componentes se ejecutan en jsdom. No verifican el diseño, el rec
 
 ## 8. Publicación como landing independiente
 
+Para la publicación principal de Code Spark usa [GitHub Pages](GITHUB_PAGES.md). Cada push a `main` ejecuta las comprobaciones y publica la página después de activar GitHub Actions en Settings → Pages. El crédito del footer de Red de Integridad está en [integraciones/red-integridad](integraciones/red-integridad/README.md).
+
+Si prefieres alojar una copia dentro de otro sistema, sigue los pasos siguientes.
+
 Ejecuta `npm run build`. Copia el contenido completo de `dist/` a una carpeta pública `equipo`.
 
 En Laravel, copia los archivos a `public/equipo`. Puedes enlazarlos desde Blade:

@@ -1,0 +1,50 @@
+/* Añadir al final del CSS actual del footer de Red de Integridad. */
+.footer .footer-bottom .footer-credits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0.6rem 0 0;
+    color: var(--color-plomo, #4a4a4a);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.footer .footer-bottom .code-spark-credit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0.35rem 0.6rem;
+    border-radius: 8px;
+    color: var(--color-plomo, #4a4a4a);
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.footer .footer-bottom .code-spark-credit:hover {
+    color: var(--color-naranja, #c04a1c);
+    background-color: var(--color-light-gray, #f8f9fa);
+}
+
+.footer .footer-bottom .code-spark-credit:focus-visible {
+    outline: 3px solid var(--color-naranja, #c04a1c);
+    outline-offset: 3px;
+}
+
+.footer .footer-bottom .code-spark-credit-icon {
+    display: block;
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footer .footer-bottom .code-spark-credit {
+        transition: none;
+    }
+}

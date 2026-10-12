@@ -4,15 +4,16 @@ Proyecto completo con Vue 3, Composition API, componentes `.vue`, TypeScript y V
 
 ## Ejecutar en tu PC
 
-1. Extrae `code-spark-equipo-vue.zip`.
-2. Abre la carpeta `code-spark-equipo-vue` en Visual Studio Code.
-3. Abre la terminal integrada en esa carpeta.
-4. Instala las dependencias y ejecuta el servidor:
+Clona el repositorio y abre su carpeta en Visual Studio Code:
 
 ```bash
+git clone https://github.com/MesonesJhon/Code-Spark.git
+cd Code-Spark
 npm ci
 npm run dev
 ```
+
+Si utilizas la entrega ZIP, extrae `code-spark-equipo-vue.zip` y ejecuta los dos comandos de npm dentro de su carpeta.
 
 Abre <http://localhost:5173>. Detén el servidor con `Ctrl + C`.
 
@@ -50,6 +51,9 @@ En Windows también puedes ejecutar `INICIAR.bat`. Instala con `npm ci` cuando a
 | `tests/` | Pruebas de contenido e interacciones con Vitest y Vue Test Utils. |
 | `docs/GUIA_PASO_A_PASO.md` | Personalización, revisión del código e integración con tu sistema. |
 | `docs/FICHA_EQUIPO.md` | Nómina confirmada, orden de fotografías y ficha para completar perfiles. |
+| `.github/workflows/deploy-pages.yml` | Pruebas, compilación y publicación automática al subir cambios a `main`. |
+| `docs/GITHUB_PAGES.md` | Activación inicial de Pages y publicación de cambios con Git. |
+| `docs/integraciones/red-integridad/` | Footer Blade y CSS para el crédito Desarrollado por Code Spark. |
 
 Los nombres de las carpetas estructurales están en inglés. Los componentes, métodos, variables y contenido están en español.
 
@@ -114,17 +118,33 @@ Las pruebas de interacción usan datos fijos en `tests/fixtures.ts`, por lo que 
 
 ## Enlazar desde el footer
 
-Después de compilar, copia el contenido de `dist/` a la carpeta pública `equipo/` de tu aplicación o hosting. Incluye tanto `index.html` como los archivos de `assets/`.
+El crédito de Red de Integridad enlaza a la página pública del equipo en GitHub Pages:
 
 ```html
-<a href="/equipo/index.html">Desarrollado por Code Spark</a>
+<a href="https://mesonesjhon.github.io/Code-Spark/" target="_blank" rel="noopener noreferrer">Code Spark</a>
 ```
 
-La base relativa de Vite permite publicar el build dentro de esa carpeta. Si tu aplicación vive en una subcarpeta, incluye su ruta base en el enlace.
+El footer completo y el CSS están en [docs/integraciones/red-integridad](docs/integraciones/red-integridad/README.md). Coloca el crédito dentro de `.footer-bottom`, debajo del copyright.
 
-No edites `dist/` para personalizar la landing: es contenido generado y la próxima compilación lo reemplazará. Edita `src/` y `public/`, y vuelve a ejecutar `npm run build`.
+## Publicar en GitHub Pages
 
-Consulta `docs/GUIA_PASO_A_PASO.md` para integrar el build con Laravel o reutilizar los componentes en otro frontend Vue.
+1. En [Settings → Pages](https://github.com/MesonesJhon/Code-Spark/settings/pages), selecciona **GitHub Actions** como Source. Solo es necesario hacerlo una vez.
+2. En [Actions](https://github.com/MesonesJhon/Code-Spark/actions/workflows/deploy-pages.yml), ejecuta **Publicar Code Spark en GitHub Pages** con **Run workflow** en `main`.
+3. Cuando termine el paso **Desplegar**, abre <https://mesonesjhon.github.io/Code-Spark/>.
+
+Después, cada **`git push origin main`** ejecuta las pruebas, compila con la base `/Code-Spark/` y publica la actualización. `git deploy` no es un comando estándar de Git.
+
+```bash
+npm test
+npm run build:pages
+git add .
+git commit -m "Actualizar Code Spark"
+git push origin main
+```
+
+Si Pages todavía no está activado, el workflow muestra **Publicación pendiente de activación** y omite el despliegue. Consulta [docs/GITHUB_PAGES.md](docs/GITHUB_PAGES.md) para los pasos completos.
+
+No edites `dist/` para personalizar la landing: GitHub Actions lo genera a partir de `src/` y `public/`. Para alojarla dentro de otro sistema puedes seguir usando `npm run build` y la integración descrita en `docs/GUIA_PASO_A_PASO.md`.
 
 ## Recursos incluidos
 
