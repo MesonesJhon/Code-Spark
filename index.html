@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es" data-tema="claro">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f5f4ee">
+    <meta name="description" content="Conoce a los siete integrantes de Code Spark, las personas detrás de nuestro equipo de desarrollo.">
+    <title>Code Spark — Siete mentes. Un mismo código.</title>
+    <link rel="icon" href="%BASE_URL%assets/img/code-spark-favicon.svg" type="image/svg+xml">
+    <script>
+      // Se ejecuta antes de pintar la página para evitar un destello del tema equivocado.
+      (() => {
+        let tema = null;
+        try { tema = localStorage.getItem('code-spark-tema'); } catch { /* El navegador puede bloquear el almacenamiento. */ }
+        if (tema !== 'claro' && tema !== 'oscuro') {
+          tema = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+        }
+        document.documentElement.dataset.tema = tema;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <noscript>Activa JavaScript para consultar los perfiles y proyectos del equipo.</noscript>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

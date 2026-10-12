@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" role="img" aria-label="Avatar ilustrado de ejemplo">
+ <defs><pattern id="puntos" width="13" height="13" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".55" fill="#304333" opacity=".16"/></pattern><linearGradient id="luz" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff" stop-opacity=".25"/><stop offset="1" stop-color="#304333" stop-opacity=".05"/></linearGradient></defs>
+ <rect width="400" height="300" fill="#d6dfc8"/><rect width="400" height="300" fill="url(#puntos)"/>
+ <path d="M96 300V134a106 106 0 0 1 212 0v166Z" fill="#fff" opacity=".3"/>
+ <circle cx="305" cy="103" r="29" fill="none" stroke="#7b9471" stroke-width="1" opacity=".5"/><path d="M75 155h18m-9-9v18M312 228h15m-7-7v15" stroke="#7b9471" stroke-width="1"/>
+ <ellipse cx="202" cy="305" rx="101" ry="14" fill="#304333" opacity=".1"/>
+ <path d="M115 306v-42c0-40 33-60 57-65h61c33 4 56 29 59 67l4 40Z" fill="#7b9471"/>
+ <path d="M179 178v26c11 22 40 22 51-1v-29" fill="#d9b397"/>
+ <path d="m171 198 30 26-25 17-20-35m81-8-36 26 27 17 24-34" fill="#fff" opacity=".3"/>
+ <path d="M201 224v80" stroke="#304333" opacity=".16"/>
+ <path d="M157 117c-17-7-14 37 1 40m87-40c18-6 17 35 0 39" fill="#d9b397"/>
+ <path d="M157 110c0-34 18-49 44-49 31 0 46 20 46 50v33c-1 30-23 52-45 52-24 0-45-23-45-52Z" fill="#d9b397"/>
+ <path d="M208 75c25 4 38 20 39 47v22c-1 30-23 52-45 52 26-14 31-45 25-71-2-26-7-42-19-50Z" fill="#304333" opacity=".075"/>
+ <path d="M145 159C128 103 156 60 201 60c55 0 75 44 58 101l-16-49c-28 11-50 1-64-12-8 21-13 44-16 63Z" fill="#304333"/>
+ <path d="M174 124h14m29 0h14" stroke="#304333" stroke-width="2" stroke-linecap="round" opacity=".65"/><ellipse cx="183" cy="135" rx="2" ry="2.5" fill="#304333"/><ellipse cx="223" cy="135" rx="2" ry="2.5" fill="#304333"/>
+ <path d="m202 138-4 16h7" fill="none" stroke="#304333" opacity=".3" stroke-linecap="round"/><path d="M188 164c7 5 16 5 24-1" fill="none" stroke="#304333" stroke-width="1.6" stroke-linecap="round" opacity=".6"/>
+ <path d="M136 257v46m137-46v46" stroke="#304333" opacity=".14"/>
+ <rect width="400" height="300" fill="url(#luz)"/>
+</svg>
