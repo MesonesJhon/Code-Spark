@@ -1,27 +1,32 @@
-# Crédito de Code Spark en Red de Integridad
+# Footer de Red de Integridad con la firma de Code Spark
 
-El crédito se coloca debajo del copyright, dentro del contenedor existente `.footer-bottom`:
+El diseño organiza la navegación en dos columnas y presenta el copyright y la firma de desarrollo en una franja inferior. En móvil, la firma queda centrada. Conserva la paleta naranja, marrón y gris del sitio y utiliza el icono verde de Code Spark.
 
-**Desarrollado por [Code Spark](https://mesonesjhon.github.io/Code-Spark/)**
+## Instalar la versión completa
 
-## Archivos preparados
+1. Abre la vista Blade que contiene `<footer class="footer">` en tu proyecto Laravel de Red de Integridad.
+2. Reemplaza el footer anterior por todo el contenido de [footer.blade.php](footer.blade.php), incluido el bloque `<style>` del comienzo.
+3. Guarda y publica esa vista en tu aplicación.
+4. Comprueba que aparezcan el crédito con su icono y nombre, el enlace del correo y las ocho secciones de navegación.
+
+El archivo ya incluye los estilos del diseño, por lo que esta integración no requiere añadir otro archivo CSS ni recompilar Vite. Elimina el footer anterior al colocar el nuevo para evitar créditos duplicados. Las reglas solo se aplican a `.footer.footer-red-integridad`.
+
+Si tienes configurado un sistema de caché de vistas que conserva una versión anterior, utiliza el procedimiento de actualización habitual de tu aplicación Laravel.
+
+## Archivos
 
 | Archivo | Uso |
 | --- | --- |
-| [footer.blade.php](footer.blade.php) | Footer completo a partir del código proporcionado, con el crédito añadido. |
-| [footer-code-spark.css](footer-code-spark.css) | Estilos adicionales para el crédito, utilizando la paleta actual del footer. |
-| [footer-ejemplo.html](../../footer-ejemplo.html) | Solo el párrafo de crédito para insertar en la vista que ya tienes. |
+| [footer.blade.php](footer.blade.php) | Versión completa de Blade, con CSS integrado y las rutas existentes. |
+| [footer-code-spark.css](footer-code-spark.css) | El mismo CSS, si prefieres mantener los estilos en un archivo de assets. |
+| [footer-ejemplo.html](../../footer-ejemplo.html) | Solo la firma de desarrollo para el footer rediseñado. |
 
-## Agregarlo a tu aplicación Laravel
+Si separas el CSS, añade `footer-code-spark.css` a los assets de Laravel, elimina el bloque `<style>` de la vista y compila/publica tus assets. Mantén la clase `footer-red-integridad` del elemento `<footer>` para que se apliquen las reglas.
 
-1. Abre la vista Blade de Red de Integridad que contiene `<footer class="footer">`.
-2. Dentro de `<div class="footer-bottom">`, debajo del párrafo del copyright, inserta el contenido de `docs/footer-ejemplo.html`. También puedes sustituir el footer completo por `footer.blade.php`.
-3. Añade el contenido de `footer-code-spark.css` al final del CSS donde ya defines `.footer` y `.footer-bottom`.
-4. Si ese CSS forma parte de los assets compilados con Vite, ejecuta el comando de compilación de tu proyecto Laravel y publica los assets nuevos junto con la vista.
-5. Comprueba que aparezca **Desarrollado por Code Spark** debajo del copyright y que abra la landing del equipo en una nueva pestaña.
+## Firma de desarrollo
 
-El icono se incluye como SVG dentro del propio enlace; no necesitas copiar una imagen al proyecto Laravel. El enlace lleva `rel="noopener noreferrer"` y una etiqueta que informa de la apertura de otra pestaña. Los estilos se limitan al crédito dentro de `.footer-bottom` y respetan la preferencia de movimiento reducido.
+La firma agrupa el icono, la etiqueta «Desarrollado por», el nombre Code Spark y una flecha en un único enlace. La tarjeta tiene estados de hover y foco, respeta movimiento reducido y conserva su color aunque el enlace se haya visitado.
 
-La dirección del enlace es `https://mesonesjhon.github.io/Code-Spark/`. Activa primero la publicación siguiendo [GITHUB_PAGES.md](../../GITHUB_PAGES.md).
+Dirección del equipo: <https://mesonesjhon.github.io/Code-Spark/>. El enlace se abre en una nueva pestaña e incluye `rel="noopener noreferrer"` y una etiqueta accesible. El correo de contacto enlaza mediante `mailto:`. El copyright utiliza el año actual de Laravel.
 
-Estos archivos están preparados para integrarlos en Red de Integridad. La aplicación Laravel se modifica en su propio proyecto; el repositorio Code-Spark contiene la landing Vue y estos archivos de integración.
+Los archivos están preparados para aplicarse en el proyecto Laravel de Red de Integridad. Este repositorio aloja la landing Vue de Code Spark y su documentación de integración.

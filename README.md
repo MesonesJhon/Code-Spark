@@ -124,7 +124,7 @@ El crédito de Red de Integridad enlaza a la página pública del equipo en GitH
 <a href="https://mesonesjhon.github.io/Code-Spark/" target="_blank" rel="noopener noreferrer">Code Spark</a>
 ```
 
-El footer completo y el CSS están en [docs/integraciones/red-integridad](docs/integraciones/red-integridad/README.md). Coloca el crédito dentro de `.footer-bottom`, debajo del copyright.
+El [footer rediseñado completo](docs/integraciones/red-integridad/footer.blade.php) incluye su CSS en la misma vista: navegación compacta, copyright y firma de Code Spark con icono. Sustituye el bloque anterior en tu aplicación Laravel por ese archivo. Consulta [la guía de integración](docs/integraciones/red-integridad/README.md).
 
 ## Publicar en GitHub Pages
 
