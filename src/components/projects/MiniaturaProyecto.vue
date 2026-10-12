@@ -2,7 +2,12 @@
 import { computed } from 'vue';
 import type { Proyecto } from '../../types/equipo';
 const props = defineProps<{ proyecto: Proyecto }>();
-const variante = computed(() => props.proyecto.id === 'reservas' ? 'mockup-reservas' : props.proyecto.id === 'operaciones' ? 'mockup-panel' : '');
+const variante = computed(() => {
+  if (props.proyecto.id === 'red-integridad') return 'mockup-integridad';
+  if (props.proyecto.id === 'reservas') return 'mockup-reservas';
+  if (props.proyecto.id === 'operaciones') return 'mockup-panel';
+  return '';
+});
 </script>
 
 <template>

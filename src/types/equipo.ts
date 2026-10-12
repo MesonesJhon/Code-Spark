@@ -57,4 +57,8 @@ export interface Proyecto {
   participantes: string[];
   detalle: string;
   enlace: string;
+  destacado?: boolean;
+  insignia?: string;
+  esEjemplo?: boolean;
 }
+

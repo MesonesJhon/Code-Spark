@@ -17,17 +17,20 @@ function abrirAporte(id: string, evento: MouseEvent) { emitir('abrirPerfil', id,
 </script>
 
 <template>
-  <details v-revelar class="proyecto">
+  <details v-revelar class="proyecto" :class="{ 'proyecto--destacado': proyecto.destacado }" :open="proyecto.destacado">
     <summary>
       <MiniaturaProyecto :proyecto="proyecto" />
       <div class="proyecto-texto">
-        <p class="proyecto-tipo">{{ proyecto.tipo }}{{ demo ? ' · Ejemplo' : '' }}</p>
+        <div class="proyecto-meta">
+          <p class="proyecto-tipo">{{ proyecto.tipo }}{{ (demo && proyecto.esEjemplo !== false) ? ' · Ejemplo' : '' }}</p>
+          <span v-if="proyecto.insignia" class="proyecto-insignia">{{ proyecto.insignia }}</span>
+        </div>
         <h3>{{ proyecto.nombre }}</h3><p>{{ proyecto.descripcion }}</p>
       </div>
       <div class="proyecto-equipo">
         <div v-if="participantes.length" class="mini-avatares"><AvatarIniciales v-for="persona in participantes" :key="persona.id" :integrante="persona" /></div>
         <span v-if="participantes.length">{{ participantes.length }} participantes</span>
-        <span v-else-if="demo">Proyecto de ejemplo</span>
+        <span v-else-if="demo && proyecto.esEjemplo !== false">Proyecto de ejemplo</span>
       </div>
       <span class="proyecto-flecha" aria-hidden="true">↗</span>
     </summary>
